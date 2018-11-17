@@ -1,2 +1,2 @@
-# PythonProject
-Pythonでいろいろ作っていきますよっていうお部屋
+# BarbecueRestaurant
+注文・会計のプログラム
