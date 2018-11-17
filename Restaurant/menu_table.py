@@ -22,12 +22,15 @@ sides = [side1, side2, side3, side4, side5]
 
 # カテゴリーごとのメニューを配列に入れる
 def display_menu_table(category):
-    index = 0
     result = []
-    for food in category:
+    for index, food in enumerate(category):
         result.append(str(index) + '.' + food.display())
-        index += 1
     return result
+
+
+# 内包表記.ver
+# def display_menu_table2(category):
+#    return [f'{str(index)}.{food.display()}' for index, food in enumerate(category)]
 
 
 # 全てのメニューを表示

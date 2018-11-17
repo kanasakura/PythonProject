@@ -7,4 +7,4 @@ class Meats(MenuBasis):
         self.amount = amount
 
     def display(self):
-        return self.name + ': ¥' + str(self.price) + ' (' + str(self.amount) + 'g)'
+        return f'{self.name}: ¥{str(self.price)}({str(self.amount)}g)'

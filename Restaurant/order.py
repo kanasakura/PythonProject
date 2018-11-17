@@ -18,11 +18,11 @@ def order_menu_count():
 def food_order(food, category):
     while True:
         try:
-            menu_number = int(input(food + 'の番号を選択してください：'))
+            menu_number = int(input(f'{food}の番号を選択してください：'))
 
             if menu_number < len(category):
                 selected_menu = category[menu_number]
-                print(selected_menu.name + 'が選択されました')
+                print(f'{selected_menu.name}が選択されました')
                 food_count = order_menu_count()
                 category_total_price = selected_menu.get_total_price(food_count)
 

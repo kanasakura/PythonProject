@@ -4,7 +4,7 @@ class MenuBasis:
         self.price = price
 
     def display(self):
-        return self.name + ': ¥' + str(self.price)
+        return f'{self.name}: ¥{str(self.price)}'
 
     def get_total_price(self, count):
         total_price = self.price * count
