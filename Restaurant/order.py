@@ -20,15 +20,13 @@ def food_order(food, category):
         try:
             menu_number = int(input(f'{food}の番号を選択してください：'))
 
-            if menu_number < len(category):
+            if 0 <= menu_number < len(category):
                 selected_menu = category[menu_number]
                 print(f'{selected_menu.name}が選択されました')
                 food_count = order_menu_count()
                 category_total_price = selected_menu.get_total_price(food_count)
 
                 return [category_total_price, food_count, selected_menu.name]
-            elif menu_number < 0:
-                print('メニュー番号がありません')
             else:
                 print('メニュー番号がありません')
 
