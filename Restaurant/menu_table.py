@@ -24,7 +24,7 @@ sides = [side1, side2, side3, side4, side5]
 def display_menu_table(category):
     result = []
     for index, food in enumerate(category):
-        result.append(str(index) + '.' + food.display())
+        result.append(f'{str(index)}.{food.display()}')
     return result
 
 
