@@ -31,4 +31,4 @@ def food_order(food, category):
                 print('メニュー番号がありません')
 
         except ValueError:
-            print('エラー：数字以外の文字を入力しないで〜')
+            print('エラー：数字以外の文字を入力しないで〜(泣)')
