@@ -1,0 +1,245 @@
+/*----------------------------
+        Common
+-----------------------------*/
+.fontawe:after{
+    display:block;
+    content:"\f061";
+    width:20px;
+    height:20px;
+    font-family: "Font Awesome 5 Free";
+    font-weight:900;
+}
+.wrapper{
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 72px;
+    box-sizing: border-box;
+}
+ul, li{
+    margin: 0;
+}
+a{
+ color: #555;
+}
+a:hover{
+    text-decoration: none;
+}
+h1{
+    font-size: 30px;
+    color: #555;
+}
+.flex{
+    display:flex;
+    justify-content: flex-end;
+}
+/*----------------------------
+        btn_style
+-----------------------------*/
+.green{
+    border: solid 1px;
+    color: #4caf50;
+    margin-left: 20px;
+}
+.green:hover{
+    background: #4caf50;
+    color: #fff;
+}
+.red{
+    border: solid 1px;
+    color: #ff1d1d;
+    margin-left: 20px;
+}
+.red:hover{
+    background-color:#ff1d1d;
+    color: #fff;
+}
+.gray{
+    background: #9e9e9e;
+    color: #fff;
+}
+.gray:hover{
+    background: #9e9e9e9e;
+    color: #fff;
+}
+/*----------------------------
+        Favorite_btn
+-----------------------------*/
+.favorite{
+    display: flex;
+    justify-content: flex-end;
+}
+.favorite-i{
+    color: #fd387b;
+}
+.click-favorite-i{
+    color: #fd387b;
+}
+.favorite-i:hover, .click-favorite-i:hover{
+    color:#f986ad;
+    cursor: pointer;
+}
+/*----------------------------
+        Header
+-----------------------------*/
+.header{
+    background-color: #fc8660;
+    padding: 20px 20px 20px 40px;
+    display: flex;
+    justify-content: space-around;
+}
+.logo{
+    font-size: 38px;
+    font-weight: bold;
+    color: #fff;
+}
+.logo:hover{
+    opacity: .8;
+    color: #fff;
+}
+.menu-list{
+    display: flex;
+}
+.menu-list li{
+    list-style-type: none;
+    margin: auto;
+    padding: 0 20px;
+}
+.menu-list > li a{
+    color: #fff;
+    border: solid 1px;
+}
+.menu-list > li a:hover{
+    background-color: #fff;
+    color: #fc8660;
+    border: solid 1px;
+}
+.accounts{
+    border: none !important;
+    color: #fff;
+    padding: 9px;
+}
+.accounts:hover{
+    color: #fff;
+    border-bottom: double 1px !important;
+}
+.username{
+    font-size: 24px;
+    margin-left: 7px;
+    vertical-align: bottom;
+}
+/*----------------------------
+        Form
+-----------------------------*/
+.form{
+    margin: auto;
+    padding: 60px;
+    width: 60%;
+    margin-top: 60px;
+    border: 1px solid #9e9e9e;
+    border-radius: 10px;
+}
+
+/*----------------------------
+        Post
+-----------------------------*/
+#post-item{
+    display: block;
+}
+.post-detail{
+    margin: 20px 0;
+    padding: 20px 20px 5px 20px;
+}
+.page-title{
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.thumbnail{
+    text-align: center;
+}
+.thumbnail p{
+    font-size: 13px;
+    margin-top: 6px;
+}
+.contributor{
+    text-align: right;
+    color: #929292;
+}
+.button-list{
+    margin-top:50px;
+}
+.date{
+    font-size: 0.9rem;
+    color: #888;
+    text-align: right;
+    padding-right:10px;
+}
+.post, .blue{
+    border: solid 1px;
+    color: #039be5;
+    margin-left: 20px;
+}
+.post-title{
+    font-size: 23px;
+}
+.post:hover, .blue:hover{
+    background-color:#039be5;
+    color: #fff;
+}
+/*----------------------------
+        Comment
+-----------------------------*/
+.box_scrollbar{
+    overflow: auto;
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+    border: 1px solid #000;
+    background-color: #f9f9f9;
+}
+.empty-box{
+    overflow: auto;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #000;
+    background-color: #f9f9f9;
+}
+.comment{
+    margin: 20px 0 20px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.comment-i{
+    color: #03a9f4;
+
+}
+.comment-i:hover{
+    color:#7dc8ea;
+}
+.comment-username{
+    font-size: 14px;
+    background: #ddd;
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+}
+/*----------------------------
+        Footer
+-----------------------------*/
+footer{
+    background: #fc8660;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    position: absolute;
+    bottom:0;
+}
+footer a{
+    color: #fff;
+}
+footer a:hover{
+    opacity: .7;
+    color: #fff;
+}

@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}投稿フォーム{% endblock %}
+{% block page-title %}投稿フォーム{% endblock %}
+
+{% block content %}
+    <form method="POST" class="form">{% csrf_token %}
+        <!--{{ form.as_p }}-->
+        {% bootstrap_form form layout='horizontal' %}
+        <div class="button-list text-right">
+            <button type="submit" class="btn btn-default red">
+                {% if request.path == '/post/new/' %}
+                    <i class="fas fa-pencil-alt mr-2"></i>投稿
+                 {% else %}
+                    <i class="fas fa-pencil-alt mr-2"></i>更新
+                {% endif %}
+            </button>
+            <!--<a class="btn btn-default red" href="{% url 'post_new' %}">-->
+               <!--<i class="fas fa-pencil-alt mr-2"></i>投稿-->
+            <!--</a>-->
+
+            <!--<a class="btn btn-default blue" href="{% url 'post_new' %}">-->
+                <!--<i class="far fa-save fa-lg mx-2"></i>保存-->
+            <!--</a>-->
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}コメントフォーム{% endblock %}
+{% block page-title %}コメントフォーム{% endblock %}
+
+{% block content %}
+    <form method="POST" class="form">{% csrf_token %}
+        {% bootstrap_form form layout='horizontal' %}
+        <div class="button-list text-right">
+            <button type="submit" class="btn btn-default blue">
+                送信<i class="far fa-comments fa-lg mx-2"></i></i>
+            </button>
+        </div>
+
+    </form>
+{% endblock %}

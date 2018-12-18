@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}投稿一覧{% endblock %}
+{% block page-title %}投稿一覧{% endblock %}
+
+{% block content %}
+    {% for post in lists %}
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="border border-secondary post-detail">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="thumbnail">
+                            <i class="fas fa-3x fa-user"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-10">
+                        <p style="color: #ccc;">{{ post.author }}</p>
+                        <a id="post-item" href="{% url 'post_detail' pk=post.pk %}">
+                            <h1 class="post-title mb-3" style="border-bottom: 1px solid;">
+                                {{ post.title | truncatechars:30 }}
+                            </h1>
+
+                            <p>{{ post.text| linebreaksbr| truncatechars:100 }}</p>
+                            <div class="flex mt-3">
+                                <p class="comment-i mr-5"><i class="fas fa-lg fa-comment-dots"></i>{{ post.comments.count }}</p>
+                                <p class="favorite-i mr-5"><i class="far fa-lg fa-star"></i>{{ post.favorite_num }}</p>
+                                <p class="date">公開日: {{ post.published_date }}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% include 'commons/pagination.html' %}
+
+{% endblock %}

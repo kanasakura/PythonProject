@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% load bootstrap4 %}
+
+{% block title %}ログイン画面{% endblock %}
+{% block page-title %}ログイン画面{% endblock %}
+
+{% block content %}
+    <form class="form" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {% bootstrap_form form layout='horizontal' %}
+        <div class="form-group row px-3">
+             <button type="submit" class="btn btn-lg btn-block gray" >ログイン</button>
+        </div>
+
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+{% endblock %}

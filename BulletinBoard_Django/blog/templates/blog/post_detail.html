@@ -1,0 +1,63 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}投稿詳細{% endblock %}
+{% block page-title %}投稿詳細{% endblock %}
+
+{% block content %}
+    <div class="post-detail">
+        <div class="date">
+            {% if post.published_date %}
+                    {{ post.published_date }}
+            {% else %}
+                <!--<a class="btn btn-default mt-5 red" href="{% url 'post_publish' pk=post.pk %}">-->
+                    <!--公開<i class="fas fa-globe ml-2"></i>-->
+                <!--</a>-->
+            {% endif %}
+        </div>
+        <h1 class="post-title text-center mt-5">{{ post.title }}</h1>
+        <div class="favorite">
+            <a href="{% url 'add_favorite_to_post' pk=post.pk %}">
+
+                <i id="like-btn" class="far fa-lg fa-star favorite-i">お気に入り追加{{post.favorite_num}}</i>
+
+                <!--<i class="fas fa-lg fa-star click-favorite-i">お気に入り追加済み{{post.favorite_num}}</i>-->
+            </a>
+
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-2">
+                <div class="thumbnail">
+                    <i class="fas fa-3x fa-user"></i>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        </div>
+        <p class="contributor"><i class="fas fa-pencil-alt pr-2"></i>{{ post.author }}</p>
+        <a class="btn btn-default back" href="/"><i class="fas fa-arrow-circle-left"></i>トップへ</a>
+
+        <!--自分が投稿したものだけ編集・削除ボタンを表示-->
+        {% if request.user.id == post.author_id %}
+        <div class="button-list text-right">
+            <a class="btn btn-default blue text-right" href="{% url 'post_edit' pk=post.pk %}">編集<i class="fas fa-pencil-alt mx-2"></i></a>
+            <a class="btn btn-default red text-right" href="{% url 'post_delete' pk=post.pk %}">削除<i class="fas fa-trash-alt mx-2"></i></a>
+        </div>
+        {% endif %}
+        <hr>
+        <a class="btn btn-default green my-4" href="{% url 'add_comment_to_post' pk=post.pk %}">
+            コメント<i class="fas fa-lg fa-comment-dots mx-2"></i>
+        </a>
+        <div class="box_scrollbar">
+            {% for comment in comments %}
+            <div class="comment">
+                <h2 class="comment-username">{{ comment.author }}</h2>
+                <p class="">{{ comment.text|linebreaksbr }}</p>
+                <div class="date">{{ comment.created_date }}</div>
+            </div>
+            {% empty %}
+                <p style="color: #999;">コメントはまだありません。</p>
+            {% endfor%}
+        </div>
+    </div>
+{% endblock %}
